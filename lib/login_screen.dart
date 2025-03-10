@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +48,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   keyboardType: TextInputType.emailAddress,
+                  controller: emailController,
                 ),
                 SizedBox(height: 20),
                 TextField(
@@ -53,6 +62,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                   ),
                   obscureText: true,
+                  controller: passwordController,
                 ),
                 SizedBox(height: 20),
                 ElevatedButton(
