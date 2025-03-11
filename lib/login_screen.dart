@@ -1,3 +1,4 @@
+import 'package:appclase/home.dart';
 import 'package:appclase/services/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -35,6 +36,11 @@ class _LoginScreenState extends State<LoginScreen> {
         backgroundColor: Colors.blue,
         textColor: Colors.white,
         fontSize: 16.0,
+      );
+
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => home()),
       );
     } else {
       ScaffoldMessenger.of(
