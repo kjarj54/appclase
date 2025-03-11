@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-Future<String> iniciarSession(String email, String password) async {
+Future<bool> iniciarSession(String email, String password) async {
   final String URL = 'http://localhost:5095/Usuarios';
 
   final Map<String, dynamic> body = {
@@ -19,13 +19,13 @@ Future<String> iniciarSession(String email, String password) async {
       
     );
     if (response.statusCode == 200) {
-      return response.body;
+      return true;
     } else if (response.statusCode == 403) {
-      return response.body;
+      return false;
     } else {
-      return 'Error en el servidor';
+      return false;
     }
   } catch (e) {
-    return e.toString();
+    return false;
   }
 }
