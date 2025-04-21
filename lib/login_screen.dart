@@ -1,4 +1,5 @@
 import 'package:appclase/home.dart';
+import 'package:appclase/main_screen.dart';
 import 'package:appclase/services/auth_services.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -40,7 +41,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => home()),
+        MaterialPageRoute(builder: (context) => MyHomePage()),
       );
     } else {
       ScaffoldMessenger.of(
